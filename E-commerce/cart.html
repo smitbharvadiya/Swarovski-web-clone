@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ------ Navbar ------- */
+        .navbar {
+            background-color: #f0eee4;
+            overflow: hidden;
+            display: flex;
+            height: 44px;
+        }
+
+        .navbar .menu a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 14px 25px;
+            display: block;
+            text-align: center;
+        }
+
+        .navbar .menu a:hover {
+            background-color: #e3e0d0;
+            transform: scale(1.05);
+        }
+
+        .navbar .mnlogo img {
+            width: 120px;
+            height: 25px;
+        }
+
+        .mnlogo {
+            height: 40px;
+            width: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .navbar .menu {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu input {
+            padding: 6px;
+            border: none;
+            margin-left: 10px;
+        }
+
+        .menu button {
+            float: right;
+            padding: 2px 5px;
+            background: #ddd;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+
+        
+.menu button img{
+    height: 20px;
+    width: 20pz;
+}
+
+
+        .menu button:hover {
+            background: #ccc;
+        }
+
+        .cart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 30px;
+        }
+
+        .cat {
+            width: 25px;
+            height: 22px;
+        }
+
+        .cat:hover {
+            transform: scale(1.1);
+        }
+
+        /* cart */
+        body {
+            font-family: Arial,
+                sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f3ed;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 32px;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .product img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .product-details p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .quantity input {
+            width: 50px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .summary {
+            margin-top: 30px;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .summary-section h3 {
+            margin-top: 0;
+        }
+
+        .checkmark-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .checkmark-option input {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+
+            <div class="mnlogo">
+                <img src="logo3.svg" alt="logo">
+            </div>
+
+            <div class="menu">
+                <a href="main.html">Home</a>
+                <a href="sale.html">Sale</a>
+                <a href="marvel.html">MARVEL</a>
+                <a href="jewelry.html">Jewelry</a>
+                <a href="watch.html">Watches</a>
+                <a href="deco.html">Decoration</a>
+                <a href="acce.html">Accessories</a>
+                <input type="search" placeholder="Search...">
+                <button type="submit"><img src="search.svg"></i></button>
+            </div>
+            <div class="cart">
+                <a href="cart.html"><img src="cart2.png" alt="cart" class="cat"></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Your Shopping Bag</h1>
+        <hr>
+        <div class="product">
+            <img src="s5.avif" alt="Product Image">
+            <div class="product-details">
+                <h2>Spider Man - Limited Edition</h2>
+                <p>This rare and dazzling Spider-Man figurine
+                    took 233 hours to complete, the show-stopping design features more
+                    than 32,000 glittering crystals, all set using our patented Pointiage technique.
+                </p>
+                <div class="actions">
+                    <div class="quantity">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                    <button class="btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="summary">
+            <div class="summary-section">
+                <h3>Order Summary</h3>
+                <p>Subtotal: $23203.06</p>
+                <p>Shipping: $10</p>
+                <p>Total: $23213.06</p>
+            </div>
+
+            <div class="summary-section">
+                <h3>Promo Code</h3>
+                <input type="text" placeholder="Enter promo code"
+                    style="width:90%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+
+            <div class="summary-section">
+                <h3>Gift Options</h3>
+                <div class="checkmark-option">
+                    <input type="checkbox" id="gift-wrap" name="gift-wrap">
+                    <label for="gift-wrap">Add gift wrap for $5</label>
+                </div>
+                <div class="checkmark-option">
+                    <input type="checkbox" id="gift-message" name="gift-message">
+                    <label for="gift-message">Include a personalized message</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            alert(`You have added ${quantity} item(s) to your cart!`);
+        }
+    </script>
+</body>
+
+</html>
